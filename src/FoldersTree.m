@@ -1059,12 +1059,14 @@
 	TreeNode * node = (TreeNode *)item;
 	NSString * newName = (NSString *)object;
 	Folder * folder = [node folder];
-	
+
+#if 0
 	// Remove the "[C] " character on Open Reader feeds
 	if (IsGoogleReaderFolder(folder) && [newName hasPrefix:@"[C] "]) {
 		NSString *tmpName = [newName substringFromIndex:4];
 		newName = tmpName;
 	}
+#endif
 	
 	if (![[folder name] isEqualToString:newName])
 	{
